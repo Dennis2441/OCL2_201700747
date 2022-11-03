@@ -1,0 +1,23 @@
+body {
+    box-sizing: border-box;
+    background: rgb(200,97,97);
+    background: -moz-radial-gradient(circle, rgba(200,97,97,1) 0%, rgba(83,34,34,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(200,97,97,1) 0%, rgba(83,34,34,1) 100%);
+    background: radial-gradient(circle, rgba(200,97,97,1) 0%, rgba(83,34,34,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c86161",endColorstr="#532222",GradientType=1);
+}
+.cover-container {
+    max-width: 70%;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none;
+}
+
+.btn-dark:hover{
+  background-color: #404040;
+  border-color: #404040;
+}
