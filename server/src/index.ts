@@ -39,10 +39,16 @@ app.post('/analizar', (req, res) => {
     }
   });
   
+  let output = "";
+  for(let i = 0; i < tree.console.length; i++){
+    output += String(tree.console[i]);
+  }
+  console.log(output)
   let obj = {
-    consola: tree.console,
+    consola: output,
     errores: tree.excepciones
   };
+  console.log(obj, tree.console);
   res.setHeader('Content-Type', 'application/json');
   res.json(obj);
 });

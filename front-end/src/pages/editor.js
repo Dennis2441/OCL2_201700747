@@ -6,8 +6,7 @@ import { Header } from "../components/header";
 
 export function Editor() {
     const [code, setCode] = useState("");
-    const [data, setData] = useState();
-
+    const [consola, setConsola] = useState("");
     async function submitHandler(){
         const reqOps = {
             method: 'POST',
@@ -15,7 +14,7 @@ export function Editor() {
             body: JSON.stringify({entrada:code})
         };
         const response = await fetch('http://localhost:5000/analizar', reqOps);
-        const data = await response.json().then( data => console.log(data));
+        const data = await response.json().then( data => setConsola(data.consola));
     }
 
     return (
@@ -33,12 +32,12 @@ export function Editor() {
                     padding={15}
                     style={{
                         fontSize: 15,
-                        backgroundColor: "rgb(33,37,41)",
+                        backgroundColor: "white",
                         fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
-                        height:"60vh"
+                        height:"50vh"
                     }}
                 ></CodeEditor>
-                <textarea className="form-control mt-3" placeholder="Consola"></textarea>
+                <textarea className="form-control mt-3" placeholder="Consola" value={consola}></textarea>
             </div>
         </div>
     );
